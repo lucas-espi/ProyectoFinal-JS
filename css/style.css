@@ -1,0 +1,44 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container-zapateria{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: darkcyan;
+}
+
+.card-prod{
+    border: solid 1px black;
+    border-radius: .75rem;
+    height: 9rem;
+    width: 10rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+#container-carrito{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(71, 138, 138);
+}
+
+
+.card-carrito {
+    border: solid 1px black;
+    border-radius: .75rem;
+    height: 9rem;
+    width: 10rem;
+    margin: 2rem;
+    text-align: center;
+    background-color: cornflowerblue;
+}
+.vaciar-carrito{
+    text-align: center;
+    margin: auto;
+    padding: 1rem 0;
+}
