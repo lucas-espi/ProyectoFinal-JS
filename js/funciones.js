@@ -10,7 +10,7 @@ zapateria.push({producto:"botas de hombre ultra venture",id:crearID(),categoria:
 zapateria.push({producto:"botas ona",id:crearID(),categoria:"trekking",marca:"montagne",precio:22110,cantidad:1,images:"../images/6.jpg"})
 zapateria.push({producto:"botas Craddock",id:crearID(),categoria:"urbano",marca:"montagne",precio:12037,cantidad:1,images:"../images/7.jpg"})
 zapateria.push({producto:"ojota azul Adidas Adilette Shower",id:crearID(),categoria:"urbano",marca:"adidas",precio:7500,cantidad:1,images:"../images/8.jpg"})
-zapateria.push({producto:"crocs crocband clog",id:crearID(),categoria:"urbano",marca:"crocs",precio:9899,dcantidad:1,images:"../images/9.jpg"})
+zapateria.push({producto:"crocs crocband clog",id:crearID(),categoria:"urbano",marca:"crocs",precio:9899,cantidad:1,images:"../images/9.jpg"})
 zapateria.push({producto:"zapatilla negra Adidas superstart",id:crearID(),categoria:"urbano",marca:"adidas",precio:25899,cantidad:1,images:"../images/10.jpg"})
 }
 cargaAutomatica()

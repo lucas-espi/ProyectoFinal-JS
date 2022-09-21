@@ -20,7 +20,7 @@ zapateria.forEach((prod) => {
         `<img class="imagen-card" src=${prod.images} alt="${prod.producto}">
         <h3 class="h3-card">${prod.producto}</h3>
         <p class="categoria-card">Categoria: ${prod.categoria}</p>
-        <p class="precio.card">$${prod.precio}</p>
+        <p class="precio-card">$${prod.precio}</p>
         <button id="btn${prod.id}" class="btn-card">agregar al <i class="fa-solid fa-cart-shopping"></i></button>
         `
     contenedorZapateria.appendChild(div)
@@ -78,10 +78,10 @@ const iterarCarrito = () => {
         let div = document.createElement("div")
         div.setAttribute ("class", "card-carrito")
         div.innerHTML = 
-            `<img class="imagen-card"  src=${prod.images} alt="${prod.producto}">
+            `<img class="imagen_card-carrito"  src=${prod.images} alt="${prod.producto}">
             <h3 class="h3-card">${prod.producto}</h3>
-            <p class="precio.card">$${prod.precio}</p>
-            <p class="cantidad.card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
+            <p class="precio-card">$${prod.precio}</p>
+            <p class="cantidad-card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
             <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"> Eliminar <i class="fa-solid fa-trash-can"></i></button>
             `
             // agregar la fincion al boton------------------------------------

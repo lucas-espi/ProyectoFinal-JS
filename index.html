@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- link js -->
-    <script  src="./js/variables.js"></script>
-    <script  src="./js/funciones.js"></script>
+    <script defer src="./js/variables.js"></script>
+    <script defer src="./js/funciones.js"></script>
     <script defer src="./js/eventos.js"></script>
     <!-- link iconos fontawesome -->
     <link rel="stylesheet" href="./assets/iconos-fontawesome/css/all.min.css">
@@ -32,18 +32,23 @@
     
     <!-- SECTION ZAPATERIA - PRODUDTOS -->
     <section id="container-zapateria">
+        <h2 class="title-h2">Productos en venta</h2>
+
+        <!-- contenedor de los productos -->
         <div id="box-zapateria"></div>
+
     </section>
     
     <!-- SECTION CARRITO - PRODUDTOS -->
     <section id="container-carrito">
-        <div id="box-carrito"></div>
-    </section>
+        <h2 class="title-h2">Carrito de compras</h2>
 
-    <aside class="box_btn-carrito">
+        <!-- Contenedor del carrito -->
+        <div id="box-carrito"></div>
+
         <p id="icon-carrito">Productos en el carrito: <span id="contador-carrito">0</span></p>
-        <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito!</button>
-        <p>Precio total :$ <span id="precio-carrito"></span></p>
-    </aside>
+        <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito! <i class="fa-regular fa-trash-can"></i></button>
+        <p class="precio-total">Precio total :$ <span id="precio-carrito"></span></p>
+    </section>
 </body>
 </html>
