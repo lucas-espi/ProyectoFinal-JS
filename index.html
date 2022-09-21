@@ -4,32 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- link js -->
     <script  src="./js/variables.js"></script>
     <script  src="./js/funciones.js"></script>
     <script defer src="./js/eventos.js"></script>
-
-    <!-- link iconos -->
+    <!-- link iconos fontawesome -->
     <link rel="stylesheet" href="./assets/iconos-fontawesome/css/all.min.css">
-
     <!-- link css -->
     <link rel="stylesheet" href="./css/style.css">
-
-    <title>Entrega-2</title>
+    
+    <title>Camino Aventura</title>
+    <link rel="shortcut icon" href="./images/icon/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- HEADER -->
+    <header id="container-header">
+        <div class="box-header">
+            <div class="header-logo">
+                <img class="logo" src="./images/icon/bota1.png" alt="logo Camino Aventura" >
+            </div>
+            <div class="header-carro">
+                <p><i class="fa-solid fa-cart-shopping  carro-header"></i><span id="contador-carrito" class="carro-header">0</span></p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- SECTION ZAPATERIA - PRODUDTOS -->
     <section id="container-zapateria">
-        
+        <div id="box-zapateria"></div>
     </section>
     
+    <!-- SECTION CARRITO - PRODUDTOS -->
     <section id="container-carrito">
-       
+        <div id="box-carrito"></div>
     </section>
 
-    <div class="box_btn-carrito">
+    <aside class="box_btn-carrito">
         <p id="icon-carrito">Productos en el carrito: <span id="contador-carrito">0</span></p>
         <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito!</button>
-    </div>
+        <p>Precio total :$ <span id="precio-carrito"></span></p>
+    </aside>
 </body>
 </html>

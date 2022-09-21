@@ -5,23 +5,103 @@
     box-sizing: border-box;
 }
 
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+/* HEADER */
+
+#container-header {
+    background-color:  #28528c;
+    box-shadow:  0 5px 10px rgba(0,0,0,0.5);
+
+}
+
+.box-header{
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    max-width: 1200px;
+}
+
+.logo {
+    height: 9rem;
+}
+.carro-header{
+    font-size: 3.5rem;
+    color: rgb(223, 224, 236);
+}
+
+/* SECTIO PRODUCTOS - ZAPATERIA */
 
 #container-zapateria{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: darkcyan;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to top, #a1c7ec, #9dbcef, #a2afef, #ada1ea, #bd90e0);
+}
+#box-zapateria{
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-flow: dense;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-content:center;
+    align-items: center;
+    
+    border: 2px solid #4c7888;
+    border-radius: .8rem;
+    padding: 4rem;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
 }
 
 .card-prod{
-    border: solid 1px black;
-    border-radius: .75rem;
-    height: 9rem;
-    width: 10rem;
-    margin: 2rem;
+    width: 100%;
+    border-radius: .5rem;
+    max-width: 18rem;   /*Ateno a los espacios en la cartas*/
+    max-height: 25rem;
+    box-shadow: 0 7px 15px 1px rgba(0,0,0,0.4);
+    color: rgb(24, 23, 23);
     text-align: center;
 }
+.imagen-card{
+    width: 100%;
+    border-top-left-radius: .8rem;
+    border-top-right-radius: .8rem;
+}
+.h3-card{
 
-#container-carrito{
+}
+.categoria-card{
+
+}
+.precio.card{
+
+}
+.btn-card {
+/* boton agregar al carrito */
+}
+.cantidad.card{
+
+}
+.btn_eliminar-carrito{
+/* boton eliminar del carrito */
+}
+
+
+/* CARRITO */
+
+#box-carrito{
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(71, 138, 138);
