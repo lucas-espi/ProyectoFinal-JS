@@ -43,12 +43,6 @@ cargaAutomatica()
 
 
 
-
-
-
-
-
-
 // FILTROS
 // Filtro por precio con función filtrado()
 

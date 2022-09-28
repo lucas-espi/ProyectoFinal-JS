@@ -92,6 +92,7 @@ const iterarCarrito = () => {
         // Captura boton eliminar carrito
         const btnEliminarCarrito = document.querySelector(`#btn-eliminar${prod.id}`)
         btnEliminarCarrito.addEventListener("click", ()=> { eliminarCarrito(prod.id)}) //Evento para eliminar por id
+    
     })  
     contadorCarrito.innerHTML = carrito.length
     precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio, 0)
@@ -107,3 +108,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
         iterarCarrito()
     }
 })
+
+
+
+
+
+
