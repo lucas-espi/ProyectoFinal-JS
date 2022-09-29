@@ -43,9 +43,10 @@ const agregarCarrito = (prodID) => {
 
     if (repite) {
         let prod = carrito.map (prod => {
-            if (prod.id === prodID){
-                prod.cantidad ++
-            }
+            // if (prod.id === prodID){
+            //     prod.cantidad ++
+            // }
+            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Revisa el error en función ahregarCarrito()")
         })
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
