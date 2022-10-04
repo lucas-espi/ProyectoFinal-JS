@@ -16,6 +16,34 @@ zapateria.push({producto:"zapatilla negra Adidas superstart",id:crearID(),catego
 cargaAutomatica()
 
 
+// Alertas
+
+// Agregado al carrito
+const alertaCarrito = () => {
+    Swal.fire({
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar:true,
+        background: '#bd90e0',
+        html:'<div class= "alerta"><p>Producto agregado correctamente! </p><i class="fa-solid fa-cart-shopping"></i> </div>'
+
+      })
+}
+
+// Producto no encontrado
+
+const alertaNoEncontrado = () => {
+    Swal.fire({
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 900,
+        timerProgressBar:true,
+        background: '#D65DB1',
+        html:'<div class= "alerta_no-encontrado"><p>Producto agregado correctamente! </p><i class="fa-solid fa-circle-exclamation"></i></div>'
+
+      })
+}
 
 
 
@@ -32,44 +60,3 @@ cargaAutomatica()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// FILTROS
-// Filtro por precio con función filtrado()
-
-// function filtrado() {
-
-//     let filtrado = prompt("Ingrese filtrar por 'categoria', 'precio', 'marca':")
-//     if (filtrado == "categoria") {
-//         let ingresoCategoria = prompt("Ingrese la categoria a filtrar: 'running', 'outdoor', 'trekking', 'urbano' ")
-//         let categoriaBuscada = zapateria.filter(calsado=> calsado.categoria == ingresoCategoria)
-//         console.table(categoriaBuscada)
-//     }  else if (filtrado == "precio"){
-//         let ingreso = Number(prompt("Ingresa el precio maximo por el cual desea filtrar: "))
-//         let precioMenor = zapateria.filter(calsado => calsado.precio <= ingreso)
-//         console.table (precioMenor) 
-//     } else if (filtrado == "marca") {
-//         let marcaBuscada = prompt("Ingresa la marca a filtrar: 'nike', 'salomon', 'topper', 'montagne', 'adidas', 'crocs' :")
-//         let marcaFiltrada = zapateria.filter(calsado => calsado.marca == marcaBuscada)
-//         console.table(marcaFiltrada)
-//     } else { 
-//         console.warn("No ha ingresado alguno de los caracteres indicados")
-//     } 
-// }
-
-// // FIND
-// // Busqueda con find, con la finción busqueda()
-// function busqueda() {
-//     let ingresoId = Number(prompt("Ingresa el ID a buscar: "))
-//     let buscarId = zapateria.find(calsado => calsado.id == ingresoId)
-//     console.table(buscarId)
-// }

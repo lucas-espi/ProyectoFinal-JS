@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <!-- link js -->
     <script defer src="./js/variables.js"></script>
     <script defer src="./js/funciones.js"></script>
     <script defer src="./js/eventos.js"></script>
+
     <!-- link iconos fontawesome -->
     <link rel="stylesheet" href="./assets/iconos-fontawesome/css/all.min.css">
     <!-- link css -->
@@ -25,7 +29,8 @@
                 <img class="logo" src="./images/icon/bota1.png" alt="logo Camino Aventura" >
             </div>
             <div class="header-carro">
-                <p><i class="fa-solid fa-cart-shopping  carro-header"></i><span id="contador-carrito" class="carro-header">0</span></p>
+                <a href="./index.html" class="carro-header">Inicio</a>
+                <a href="./carrito.html"><i class="fa-solid fa-cart-shopping  carro-header"><span id="contador-carrito" class="carro-header">0</span></i></a> <!-- el link no funciona por ahora-->
             </div>
         </div>
     </header>
@@ -33,6 +38,12 @@
     <!-- SECTION ZAPATERIA - PRODUDTOS -->
     <section id="container-zapateria">
         <h2 class="title-h2">Productos en venta</h2>
+
+        <!-- Filtro de productos -->
+        <div id="box-filtro">
+            <i class="fa-solid fa-magnifying-glass  serch"></i>
+            <input id="input-filtro" type="search" placeholder="  Buscar producto" value="">
+        </div>
 
         <!-- contenedor de los productos -->
         <div id="box-zapateria"></div>
