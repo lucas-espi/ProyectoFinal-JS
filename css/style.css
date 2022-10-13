@@ -57,6 +57,13 @@ body{
     padding: 2rem 0;
 }
 
+.container-ajax{
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to top, #a1c7ec, #9dbcef, #a2afef, #ada1ea, #bd90e0);
+    padding: 2rem 0;
+}
+
 /* Filtro */
 
 #box-filtro {

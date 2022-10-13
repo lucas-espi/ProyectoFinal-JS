@@ -1,94 +1,94 @@
 [  
     {
     "producto":"zapatillas revolution 6",
-    "id":"crearID()",
+    "id":1,
     "categoria":"running",
     "marca":"nike",
     "precio": 21900,
     "cantidad":1, 
-    "images":"images/1.jpg"
+    "images":"../images/1.jpg"
 },
 {
     "producto":"zapatillas zoom Winflo 8",
-    "id":"crearID()",
+    "id":2,
     "categoria":"running",
     "marca":"nike",
     "precio":36299,
     "cantidad":1, 
-    "images":"images/2.jpg"
+    "images":"../images/2.jpg"
 },
 {
     "producto":"zapatillas supercross 3",
-    "id":"crearID()",
+    "id":3,
     "categoria":"outdoor",
     "marca":"salomon",
     "precio":31499,
     "cantidad":1,
-    "images": "images/3.jpg"
+    "images": "../images/3.jpg"
 },
 {
     "producto":"zapatillas gondor II",
-    "id":"crearID()",
+    "id":4,
     "categoria":"outdoor",
     "marca":"topper",
     "precio":17000,
     "cantidad":1, 
-    "images":"images/4.jpg"
+    "images":"../images/4.jpg"
 },
 {
     "producto":"botas de hombre ultra venture",
-    "id":"crearID()",
+    "id":5,
     "categoria":"trekking",
     "marca":"montagne",
     "precio":37000,
     "cantidad":1,
-    "images":"images/5.jpg"
+    "images":"../images/5.jpg"
 },
 
 {
     "producto":"botas ona",
-    "id":"crearID()",
+    "id":6,
     "categoria":"trekking",
     "marca":"montagne",
     "precio":22110,
     "cantidad":1,
-    "images":"images/6.jpg"
+    "images":"../images/6.jpg"
 },
 {
     "producto":"botas Craddock",
-    "id":"crearID()",
+    "id":7,
     "categoria":"urbano",
     "marca":"montagne",
     "precio":12037,
     "cantidad":1,
-    "images":"images/7.jpg"
+    "images":"../images/7.jpg"
 },
 {
     "producto":"ojota azul Adidas Adilette Shower",
-    "id":"crearID()",
+    "id":"8",
     "categoria":"urbano",
     "marca":"adidas",
     "precio":7500,
     "cantidad":1,
-    "images":"images/8.jpg"
+    "images":"../images/8.jpg"
 },
 {
     "producto":"crocs crocband clog",
-    "id":"crearID()",
+    "id":9,
     "categoria":"urbano",
     "marca":"crocs",
     "precio":9899,
     "cantidad":1,
-    "images":"images/9.jpg"
+    "images":"../images/9.jpg"
 },
 {
     "producto":"zapatilla negra Adidas superstart",
-    "id":"crearID()",
+    "id":10,
     "categoria":"urbano",
     "marca":"adidas",
     "precio":25899,
     "cantidad":1,
-    "images":"images/10.jpg"
+    "images":"../images/10.jpg"
 }
 
 ]
