@@ -19,7 +19,7 @@ cargaAutomatica()
 
 // BBDD traidos desde bbdd.json
 const contenedor = document.querySelector(".container-ajax")
-const URL = "../bbdd/bbdd.json"
+const URL = "bbdd/bbdd.json"
 let sport = []
 
 
@@ -27,10 +27,35 @@ let sport = []
 const cargarContenido  = async ()=> {
   fetch(URL)
       .then (respose => respose.json())
-      .then (data => sport = data)
-      .catch(console.log("error")
-      .finally (contenedor.innerHTML = contieneZapateria(etiqueta))
-)}
+      .then (data => {
+        contieneSport(data)
+      //sport.push(...data)  
+      // aca llenas la galeria de productos pasando data o sport a tu funcion de carga
+      })
+      //.catch(console.log("error en la carga")
+//)
+}
+cargarContenido()
+//contieneSport(sport)
+
+function contieneSport(array) {  
+  contenedor.innerHTML=""
+      array.forEach((prod) => {
+
+      let div = document.createElement("div")
+      div.setAttribute ("class", "card-prod")
+
+      div.innerHTML =  
+                  `<img class="imagen-card" src=${prod.images} alt="${prod.producto}">
+                  <h3 class="h3-card">${prod.producto}</h3>
+                  <p class="categoria-card">Categoria: ${prod.categoria}</p>
+                  <p class="precio-card">$${prod.precio}</p>
+                  <button id="btn${prod.id}" class="btn-card">agregar al <i class="fa-solid fa-cart-shopping"></i></button>
+                  `
+      contenedor.appendChild(div)
+      })
+}
+
 
 
 // Alertas
