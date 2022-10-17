@@ -1,0 +1,95 @@
+[  
+    {
+    "producto":"zapatillas revolution 6",
+    "id":1,
+    "categoria":"running",
+    "marca":"nike",
+    "precio": 21900,
+    "cantidad":1, 
+    "images":"../images/1.jpg"
+},
+{
+    "producto":"zapatillas zoom Winflo 8",
+    "id":2,
+    "categoria":"running",
+    "marca":"nike",
+    "precio":36299,
+    "cantidad":1, 
+    "images":"../images/2.jpg"
+},
+{
+    "producto":"zapatillas supercross 3",
+    "id":3,
+    "categoria":"outdoor",
+    "marca":"salomon",
+    "precio":31499,
+    "cantidad":1,
+    "images": "../images/3.jpg"
+},
+{
+    "producto":"zapatillas gondor II",
+    "id":4,
+    "categoria":"outdoor",
+    "marca":"topper",
+    "precio":17000,
+    "cantidad":1, 
+    "images":"../images/4.jpg"
+},
+{
+    "producto":"botas de hombre ultra venture",
+    "id":5,
+    "categoria":"trekking",
+    "marca":"montagne",
+    "precio":37000,
+    "cantidad":1,
+    "images":"../images/5.jpg"
+},
+
+{
+    "producto":"botas ona",
+    "id":6,
+    "categoria":"trekking",
+    "marca":"montagne",
+    "precio":22110,
+    "cantidad":1,
+    "images":"../images/6.jpg"
+},
+{
+    "producto":"botas Craddock",
+    "id":7,
+    "categoria":"urbano",
+    "marca":"montagne",
+    "precio":12037,
+    "cantidad":1,
+    "images":"../images/7.jpg"
+},
+{
+    "producto":"ojota azul Adidas Adilette Shower",
+    "id":"8",
+    "categoria":"urbano",
+    "marca":"adidas",
+    "precio":7500,
+    "cantidad":1,
+    "images":"../images/8.jpg"
+},
+{
+    "producto":"crocs crocband clog",
+    "id":9,
+    "categoria":"urbano",
+    "marca":"crocs",
+    "precio":9899,
+    "cantidad":1,
+    "images":"../images/9.jpg"
+},
+{
+    "producto":"zapatilla negra Adidas superstart",
+    "id":10,
+    "categoria":"urbano",
+    "marca":"adidas",
+    "precio":25899,
+    "cantidad":1,
+    "images":"../images/10.jpg"
+}
+
+]
+

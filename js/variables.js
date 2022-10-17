@@ -5,3 +5,6 @@ const crearID = () => parseInt( Math.random() * 100000) //Crea id para el preduc
 const zapateria = []
 // CARRITO
 let carrito = []
+
+
+

@@ -1,5 +1,5 @@
 
-// conector con la seccion #container-zapateria del index.html
+// conector con la seccion #container-zapateria del index.html - div filtro
 const contenedorZapateria = document.querySelector("#box-zapateria")
 // conector con la seccion #container-carrito del index.html
 const contenedorCarrito = document.querySelector("#box-carrito")
@@ -9,43 +9,78 @@ const vaciarCarrito = document.querySelector("#vaciar-carrito")
 const contadorCarrito = document.querySelector("#contador-carrito")
 // conector con el parrafo #precio-carrito del index.html => section carrito
 const precioCarrito = document.querySelector("#precio-carrito")
+// Filtro busqueda
+const inputFiltrar = document.querySelector("#input-filtro")
 
 
-// Iteracion de cada objeto del array para crearlos en el HTLM
+// ---------------------CONTENEDOR ZAPATERIA-----------------------------
+// Filtro busqueda
 
-zapateria.forEach((prod) => {
-    let div = document.createElement("div")
-    div.setAttribute ("class", "card-prod")
-    div.innerHTML =  
-        `<img class="imagen-card" src=${prod.images} alt="${prod.producto}">
-        <h3 class="h3-card">${prod.producto}</h3>
-        <p class="categoria-card">Categoria: ${prod.categoria}</p>
-        <p class="precio-card">$${prod.precio}</p>
-        <button id="btn${prod.id}" class="btn-card">agregar al <i class="fa-solid fa-cart-shopping"></i></button>
-        `
-    contenedorZapateria.appendChild(div)
+// Funcion llamada para mostrar productos
+contieneZapateria(zapateria)
 
-    // Evento al boton - seleccionar por id
-    const botonCard = document.getElementById(`btn${prod.id}`)
-    botonCard.addEventListener("click", ()=> {
-    agregarCarrito(prod.id)
-    // console.log(carrito)
-    })
+function filtrado() {
+    inputFiltrar.value = inputFiltrar.value.trim().toLocaleLowerCase() //Tomar el valor del input serch
+
+    if (inputFiltrar.value !== "") {
+                let valorFiltro = zapateria.filter (prod => prod.producto.includes(inputFiltrar.value))
+                if (valorFiltro.length > 0) {
+                    contieneZapateria(valorFiltro)
+
+                } else {
+                    alertaNoEncontrado()
+                }
+    }else{
+        contieneZapateria(zapateria)
+    }
+}
+
+inputFiltrar.addEventListener("input", () =>{
+    filtrado()        
 })
 
-// ---------------CARRITO ---------------
 
-// Funcion para agregar al carrio
+// Funcion agreagar producto buscado
+function contieneZapateria(array) {
+    
+    contenedorZapateria.innerHTML=""
+        array.forEach((prod) => {
+
+        let div = document.createElement("div")
+
+        div.setAttribute ("class", "card-prod")
+
+                div.innerHTML +=  
+                    `<img class="imagen-card" src=${prod.images} alt="${prod.producto}">
+                    <h3 class="h3-card">${prod.producto}</h3>
+                    <p class="categoria-card">Categoria: ${prod.categoria}</p>
+                    <p class="precio-card">$${prod.precio}</p>
+                    <button id="btn${prod.id}" class="btn-card">agregar al <i class="fa-solid fa-cart-shopping"></i></button>
+                    `
+                    contenedorZapateria.appendChild(div)
+
+                // Evento al boton - seleccionar por id
+                const botonCard = document.getElementById(`btn${prod.id}`)
+                botonCard.addEventListener("click", ()=> {
+                         agregarCarrito(prod.id)
+                         alertaCarrito() //Alerta para cada vez que se agrega un producto al carrito 
+                    })
+                })
+}
+
+
+// -----------------------------CARRITO -----------------------------
+
+// Funcion para agregar al carrito
 const agregarCarrito = (prodID) => {
 
     // contador productos en carrito
     const repite = carrito.some (prod => prod.id === prodID)
 
     if (repite) {
-        let prod = carrito.map (prod => {
-            if (prod.id === prodID){
-                prod.cantidad ++
-            }
+        let prod = carrito.map (prod => { //ver si con esta variable puedo atrapar la cantidad de todo el carro
+
+            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Revisa el error en función ahregarCarrito()")
         })
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
@@ -84,8 +119,7 @@ const iterarCarrito = () => {
             <p class="cantidad-card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
             <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"> Eliminar <i class="fa-solid fa-trash-can"></i></button>
             `
-            // agregar la fincion al boton------------------------------------
-        contenedorCarrito.appendChild(div)
+            contenedorCarrito.appendChild(div)
 
         localStorage.setItem("carrito", JSON.stringify(carrito))
         
@@ -94,20 +128,21 @@ const iterarCarrito = () => {
         btnEliminarCarrito.addEventListener("click", ()=> { eliminarCarrito(prod.id)}) //Evento para eliminar por id
     
     })  
+
+    // Revisar la forma de tomar todos los productos (repetidos)
     contadorCarrito.innerHTML = carrito.length
     precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio, 0)
 }
 
 
-
 // Local Storag
-
 document.addEventListener("DOMContentLoaded", ()=> {
     if (localStorage.getItem("carrito")) {
         carrito = JSON.parse(localStorage.getItem("carrito"))
         iterarCarrito()
     }
 })
+
 
 
 
