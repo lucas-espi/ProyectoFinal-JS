@@ -11,6 +11,12 @@ const contadorCarrito = document.querySelector("#contador-carrito")
 const precioCarrito = document.querySelector("#precio-carrito")
 // Filtro busqueda
 const inputFiltrar = document.querySelector("#input-filtro")
+// Filtro precio
+const filterPrecio = document.querySelector(".range-precio")
+// Filtro categoria
+const filterCategoria = document.querySelector(".select-categoria")
+
+
 
 
 
@@ -23,8 +29,10 @@ const cargarContenido  = async ()=> {
         const response = await fetch(URL)
         const data = await response.json()
         zapateria.push(...data)
-        //contieneZapateria(zapateria)
+        
         llamarFiltro(zapateria)
+        //filtroPrecio(zapateria)
+        //filtroCategoria(zapateria)
 
     } catch (error) {
         Swal.fire ({
@@ -66,6 +74,7 @@ const contieneZapateria = (array) =>{
 // ----------------------------FILTRADO----------------------------------
 
 // Funcion para encontrar por filtro
+// Filtro por busqueda
 const llamarFiltro = (array) => {
     contieneZapateria(array)
 
@@ -75,9 +84,10 @@ const llamarFiltro = (array) => {
             const valueFilter = array.filter( prod => prod.producto.includes(inputFiltrar.value))
             if (valueFilter.length > 0){ 
                 contieneZapateria(valueFilter)
-            }else{
-                 alertaNoEncontrado()
-                 console.warn("aqui hay problemas")
+            }else if(valueFilter.length === 0){
+                 alertaNoEncontrado()   
+            } else{
+                console.warn("aqui hay problemas")
             }
         } else {
             contieneZapateria(array)
@@ -85,6 +95,44 @@ const llamarFiltro = (array) => {
     })
 
 }
+let spanPrecio = document.querySelector(".precio-max") 
+       //spanPrecio = filterPrecio.value
+// Filtro por precio
+const filtroPrecio = (array) =>{
+    contieneZapateria(array)
+    
+
+    filterPrecio.addEventListener("click", ()=>{
+        if (filterPrecio.value > 0) {
+            const precioMax = array.filter(prod => prod.precio < filterPrecio.value);
+            spanPrecio.innerHTML = filterPrecio.value
+            if (precioMax.length > 0){ 
+                contieneZapateria(precioMax)
+            }else{
+                 console.warn("aqui hay problemas")
+            }
+        } else {
+            contieneZapateria(array)
+        }
+    })
+}
+// Filtro por categoria
+const filtroCategoria = (array) => {
+    filterCategoria.addEventListener("click", ()=>{
+        if (filterCategoria.value === "zapatilla") {
+            const catZapatilla = array.filter(prod => prod.categoria === filterCategoria.value);
+            contieneZapateria(catZapatilla)
+        } else if (filterCategoria.value === "ojota"){
+            const catOjota = array.filter(prod => prod.categoria === filterCategoria.value);
+            contieneZapateria(catOjota)
+        } else {
+            contieneZapateria(array)
+        }
+    })
+
+}
+
+
 
 
 // -----------------------------CARRITO -----------------------------

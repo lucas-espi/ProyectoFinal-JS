@@ -3,7 +3,7 @@
     "producto":"zapatillas forum low",
     "id":1,
     "marca":"adidas",
-    "categoria":"zapatillas",
+    "categoria":"zapatilla",
     "precio":38849,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/zapatillas-forum-low.jpg"
@@ -13,7 +13,7 @@
     "producto":"zapatillas adidas multix",
     "id":2,
     "marca":"adidas",
-    "categoria":"zapatillas",
+    "categoria":"zapatilla",
     "precio":25199,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/zapatillas-adidas-multix.jpg"
@@ -33,7 +33,7 @@
     "producto":"zapatillas adidas nmd_r1",
     "id":5,
     "marca":"adidas",
-    "categoria":"zapatillas",
+    "categoria":"zapatilla",
     "precio":44000,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/zapatillas-adidas-nmd_R1.jpg"
@@ -43,7 +43,7 @@
     "producto":"zapatillas fila ray tracer",
     "id":6,
     "marca":"fila",
-    "categoria":"zapatillas",
+    "categoria":"zapatilla",
     "precio":27200,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/ZapatillasFilaRayTracerWRF.jpg"
@@ -174,7 +174,7 @@
     "id":19,
     "marca":"vans",
     "categoria":"zapatilla",
-    "precio":2700,
+    "precio":27500,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/ZapatillasVansOldSkool.jpg"
     },
@@ -193,7 +193,7 @@
     "producto":"ojotas adidas adilette lite",
     "id":22,
     "marca":"adidas",
-    "categoria":"ojotas",
+    "categoria":"ojota",
     "precio":11500,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/Ojotas-adidasAdiletteLite.jpg"
@@ -203,7 +203,7 @@
     "producto":"ojotas havaianas top",
     "id":23,
     "marca":"havaianas",
-    "categoria":"ojotas",
+    "categoria":"ojota",
     "precio":3700,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/OjotasHavaianasTop.jpg"
@@ -213,7 +213,7 @@
     "producto":"ojotas havaianas blend",
     "id":24,
     "marca":"havaianas",
-    "categoria":"ojotas",
+    "categoria":"ojota",
     "precio":12000,
     "cantidad":1,
     "imagen":"/bbdd/img-bbdd/OjotasHavaianasUrbanBlend.jpg"

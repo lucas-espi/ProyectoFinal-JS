@@ -12,6 +12,9 @@
 #box-filtro {
     margin: 0.5rem auto 2rem auto;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #input-filtro{
     background-color: #bcd1e5;
