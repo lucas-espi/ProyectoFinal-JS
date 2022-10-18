@@ -1,0 +1,37 @@
+/* HEADER */
+
+#container-header {
+    background-color:  #28528c;
+    box-shadow:  0 5px 10px rgba(0,0,0,0.5);
+
+}
+
+.box-header{
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    max-width: 1200px;
+}
+.logo {
+    height: 9rem;
+}
+
+.header-carro{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    font-family: cursive;
+}
+
+.carro-header{
+    font-size: 2rem;
+    color: rgb(223, 224, 236);
+    text-decoration: none;
+    margin: 0 1rem;
+}

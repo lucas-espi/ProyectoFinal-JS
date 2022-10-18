@@ -1,0 +1,39 @@
+/* Aletras  */
+
+.alerta{
+
+    border-radius: .5rem;
+    border: solid transparent 1px;
+    color: #1b314e;
+
+    height: 2rem;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+   
+}
+
+.alerta_no-encontrado{
+    border-radius: .5rem;
+    border: solid transparent 1px;
+    color: #11243d;
+
+    height: 2rem;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

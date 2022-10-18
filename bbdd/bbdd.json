@@ -1,95 +1,222 @@
-[  
+[
     {
-    "producto":"zapatillas revolution 6",
+    "producto":"zapatillas forum low",
     "id":1,
-    "categoria":"running",
-    "marca":"nike",
-    "precio": 21900,
-    "cantidad":1, 
-    "images":"../images/1.jpg"
-},
-{
-    "producto":"zapatillas zoom Winflo 8",
+    "marca":"adidas",
+    "categoria":"zapatillas",
+    "precio":38849,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/zapatillas-forum-low.jpg"
+    },
+    
+    {
+    "producto":"zapatillas adidas multix",
     "id":2,
-    "categoria":"running",
-    "marca":"nike",
-    "precio":36299,
-    "cantidad":1, 
-    "images":"../images/2.jpg"
-},
-{
-    "producto":"zapatillas supercross 3",
-    "id":3,
-    "categoria":"outdoor",
-    "marca":"salomon",
-    "precio":31499,
+    "marca":"adidas",
+    "categoria":"zapatillas",
+    "precio":25199,
     "cantidad":1,
-    "images": "../images/3.jpg"
-},
-{
-    "producto":"zapatillas gondor II",
+    "imagen":"/bbdd/img-bbdd/zapatillas-adidas-multix.jpg"
+    },
+  
+    {
+    "producto":"zapatillas adidas forum",
     "id":4,
-    "categoria":"outdoor",
-    "marca":"topper",
-    "precio":17000,
-    "cantidad":1, 
-    "images":"../images/4.jpg"
-},
-{
-    "producto":"botas de hombre ultra venture",
+    "marca":"adidas",
+    "categoria":"zapatillas",
+    "precio":38800,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/zapatillas-adidas-forum-mid.jpg"
+    },
+    
+    {
+    "producto":"zapatillas adidas nmd_r1",
     "id":5,
-    "categoria":"trekking",
-    "marca":"montagne",
-    "precio":37000,
+    "marca":"adidas",
+    "categoria":"zapatillas",
+    "precio":44000,
     "cantidad":1,
-    "images":"../images/5.jpg"
-},
-
-{
-    "producto":"botas ona",
+    "imagen":"/bbdd/img-bbdd/zapatillas-adidas-nmd_R1.jpg"
+    },
+    
+    {
+    "producto":"zapatillas fila ray tracer",
     "id":6,
-    "categoria":"trekking",
-    "marca":"montagne",
-    "precio":22110,
+    "marca":"fila",
+    "categoria":"zapatillas",
+    "precio":27200,
     "cantidad":1,
-    "images":"../images/6.jpg"
-},
-{
-    "producto":"botas Craddock",
+    "imagen":"/bbdd/img-bbdd/ZapatillasFilaRayTracerWRF.jpg"
+    },
+    
+    {
+    "producto":"zapatillas fila excursion",
     "id":7,
-    "categoria":"urbano",
-    "marca":"montagne",
-    "precio":12037,
+    "marca":"fila",
+    "categoria":"zapatilla",
+    "precio":28800,
     "cantidad":1,
-    "images":"../images/7.jpg"
-},
-{
-    "producto":"ojota azul Adidas Adilette Shower",
-    "id":"8",
-    "categoria":"urbano",
-    "marca":"adidas",
-    "precio":7500,
+    "imagen":"/bbdd/img-bbdd/ZapatillasFilaExcursion.jpg"
+    },
+    
+    {
+    "producto":"zapatillas fila oakmont sl",
+    "id":8,
+    "marca":"fila",
+    "categoria":"zapatilla",
+    "precio":25200,
     "cantidad":1,
-    "images":"../images/8.jpg"
-},
-{
-    "producto":"crocs crocband clog",
+    "imagen":"/bbdd/img-bbdd/ZapatillasFilaOakmontSl.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike dunk retro",
     "id":9,
-    "categoria":"urbano",
-    "marca":"crocs",
-    "precio":9899,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":52700,
     "cantidad":1,
-    "images":"../images/9.jpg"
-},
-{
-    "producto":"zapatilla negra Adidas superstart",
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeDunkHiRetroSe.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike air max 90",
     "id":10,
-    "categoria":"urbano",
-    "marca":"adidas",
-    "precio":25899,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":51500,
     "cantidad":1,
-    "images":"../images/10.jpg"
-}
-
-]
-
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeAirMax90Se.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike air max 90",
+    "id":11,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":50000,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeAirMax90SeWhite.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike high lv8",
+    "id":12,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":52700,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeAirForce1High07Lv8.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike air force",
+    "id":13,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":65550,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeAirForce1GoreTex.jpg"
+    },
+    
+    {
+    "producto":"zapatillas nike vapormax",
+    "id":14,
+    "marca":"nike",
+    "categoria":"zapatilla",
+    "precio":79990,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasNikeAirVapormax2021Flyknit.jpg"
+    },
+    
+    {
+    "producto":"zapatillas puma rs-fast",
+    "id":15,
+    "marca":"puma",
+    "categoria":"zapatilla",
+    "precio":32000,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasPumaRs-FastLimiter.jpg"
+    },
+    
+    {
+    "producto":"zapatillas puma rs metric",
+    "id":16,
+    "marca":"puma",
+    "categoria":"zapatilla",
+    "precio":20500,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasPumaRsMetricCore.jpg"
+    },
+    
+    {
+    "producto":"zapatillas puma city rider",
+    "id":17,
+    "marca":"puma",
+    "categoria":"zapateria",
+    "precio":26200,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasPumaCityRider.jpg"
+    },
+    
+    {
+    "producto":"zapatillas puma bmw mms",
+    "id":18,
+    "marca":"puma",
+    "categoria":"zapatilla",
+    "precio":33500,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasPumaBmwMmsMacoSl.jpg"
+    },
+    
+    {
+    "producto":"zapatillas vans old skool",
+    "id":19,
+    "marca":"vans",
+    "categoria":"zapatilla",
+    "precio":2700,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasVansOldSkool.jpg"
+    },
+    
+    {
+    "producto":"zapatillas vans ultra range",
+    "id":20,
+    "marca":"vans",
+    "categoria":"zapatilla",
+    "precio":41200,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/ZapatillasVansUltraRangeRapidweld.jpg"
+    },
+        
+    {
+    "producto":"ojotas adidas adilette lite",
+    "id":22,
+    "marca":"adidas",
+    "categoria":"ojotas",
+    "precio":11500,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/Ojotas-adidasAdiletteLite.jpg"
+    },
+    
+    {
+    "producto":"ojotas havaianas top",
+    "id":23,
+    "marca":"havaianas",
+    "categoria":"ojotas",
+    "precio":3700,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/OjotasHavaianasTop.jpg"
+    },
+    
+    {
+    "producto":"ojotas havaianas blend",
+    "id":24,
+    "marca":"havaianas",
+    "categoria":"ojotas",
+    "precio":12000,
+    "cantidad":1,
+    "imagen":"/bbdd/img-bbdd/OjotasHavaianasUrbanBlend.jpg"
+    }
+    
+    ]

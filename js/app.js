@@ -13,59 +13,77 @@ const precioCarrito = document.querySelector("#precio-carrito")
 const inputFiltrar = document.querySelector("#input-filtro")
 
 
-// ---------------------CONTENEDOR ZAPATERIA-----------------------------
-// Filtro busqueda
 
-// Funcion llamada para mostrar productos
-contieneZapateria(zapateria)
+// -------------CONEXION FEETCH CON JSON LOCAL---------------------------
+const zapateria = []
 
-function filtrado() {
-    inputFiltrar.value = inputFiltrar.value.trim().toLocaleLowerCase() //Tomar el valor del input serch
+const cargarContenido  = async ()=> {
 
-    if (inputFiltrar.value !== "") {
-                let valorFiltro = zapateria.filter (prod => prod.producto.includes(inputFiltrar.value))
-                if (valorFiltro.length > 0) {
-                    contieneZapateria(valorFiltro)
+    try {
+        const response = await fetch(URL)
+        const data = await response.json()
+        zapateria.push(...data)
+        //contieneZapateria(zapateria)
+        llamarFiltro(zapateria)
 
-                } else {
-                    alertaNoEncontrado()
-                }
-    }else{
-        contieneZapateria(zapateria)
-    }
+    } catch (error) {
+        Swal.fire ({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error al cargar los productos'
+        })
+    }  
 }
+cargarContenido()
 
-inputFiltrar.addEventListener("input", () =>{
-    filtrado()        
-})
+// ---------------------CONTENEDOR ZAPATERIA-----------------------------
 
-
-// Funcion agreagar producto buscado
-function contieneZapateria(array) {
-    
+// Funcion que itera al json
+const contieneZapateria = (array) =>{  
     contenedorZapateria.innerHTML=""
-        array.forEach((prod) => {
-
+    array.forEach((prod) => {
         let div = document.createElement("div")
-
         div.setAttribute ("class", "card-prod")
-
                 div.innerHTML +=  
-                    `<img class="imagen-card" src=${prod.images} alt="${prod.producto}">
+                    `<img class="imagen-card" src=${prod.imagen} alt="${prod.producto}">
                     <h3 class="h3-card">${prod.producto}</h3>
                     <p class="categoria-card">Categoria: ${prod.categoria}</p>
-                    <p class="precio-card">$${prod.precio}</p>
+                    <p class="precio-card"><span class="precio-color">$${prod.precio}</span></p>
                     <button id="btn${prod.id}" class="btn-card">agregar al <i class="fa-solid fa-cart-shopping"></i></button>
                     `
-                    contenedorZapateria.appendChild(div)
+                contenedorZapateria.appendChild(div)
 
-                // Evento al boton - seleccionar por id
-                const botonCard = document.getElementById(`btn${prod.id}`)
-                botonCard.addEventListener("click", ()=> {
-                         agregarCarrito(prod.id)
-                         alertaCarrito() //Alerta para cada vez que se agrega un producto al carrito 
-                    })
-                })
+        // Evento al boton - seleccionar por id
+        const botonCard = document.getElementById(`btn${prod.id}`)
+        botonCard.addEventListener("click", ()=> {
+                 agregarCarrito(prod.id);
+                 alertaCarrito() //Alerta para cada vez que se agrega un producto al carrito 
+        });
+    });
+    //llamarFiltro(array)
+}
+
+// ----------------------------FILTRADO----------------------------------
+
+// Funcion para encontrar por filtro
+const llamarFiltro = (array) => {
+    contieneZapateria(array)
+
+    inputFiltrar.addEventListener("input", ()=> {
+        inputFiltrar.value = inputFiltrar.value.trim().toLocaleLowerCase()
+        if (inputFiltrar.value !== "") {
+            const valueFilter = array.filter( prod => prod.producto.includes(inputFiltrar.value))
+            if (valueFilter.length > 0){ 
+                contieneZapateria(valueFilter)
+            }else{
+                 alertaNoEncontrado()
+                 console.warn("aqui hay problemas")
+            }
+        } else {
+            contieneZapateria(array)
+        }
+    })
+
 }
 
 
@@ -73,7 +91,6 @@ function contieneZapateria(array) {
 
 // Funcion para agregar al carrito
 const agregarCarrito = (prodID) => {
-
     // contador productos en carrito
     const repite = carrito.some (prod => prod.id === prodID)
 
@@ -89,7 +106,7 @@ const agregarCarrito = (prodID) => {
     iterarCarrito()
 }
 
-// Funcion para eliminar del carrio
+// Funcion para eliminar del carrito
 const eliminarCarrito = (prodID) => {
     let cardId = carrito.find((prod) => prod.id === prodID)
     let unidad = carrito.indexOf(cardId)
@@ -113,7 +130,7 @@ const iterarCarrito = () => {
         let div = document.createElement("div")
         div.setAttribute ("class", "card-carrito")
         div.innerHTML = 
-            `<img class="imagen_card-carrito"  src=${prod.images} alt="${prod.producto}">
+            `<img class="imagen_card-carrito"  src=${prod.imagen} alt="${prod.producto}">
             <h3 class="h3-card">${prod.producto}</h3>
             <p class="precio-card">$${prod.precio}</p>
             <p class="cantidad-card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
