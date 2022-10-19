@@ -10,8 +10,8 @@
     
     <!-- link js -->
     <script defer src="./js/variables.js"></script>
-    <script defer src="./js/funciones.js"></script>
-    <script defer src="./js/eventos.js"></script>
+    <script defer src="./js/alertas.js"></script>
+    <script defer src="./js/app.js"></script>
 
     <!-- link iconos fontawesome -->
     <link rel="stylesheet" href="./assets/iconos-fontawesome/css/all.min.css">
@@ -37,12 +37,27 @@
     
     <!-- SECTION ZAPATERIA - PRODUDTOS -->
     <section id="container-zapateria">
-        <h2 class="title-h2">Productos en venta</h2>
+        <h1>Camino Aventura</h1>
+        <h2 class="title-h2">Nuestros Calzados</h2>
 
         <!-- Filtro de productos -->
         <div id="box-filtro">
-            <i class="fa-solid fa-magnifying-glass  serch"></i>
-            <input id="input-filtro" type="search" placeholder="  Buscar producto" value="">
+            <div class="box-input">
+                <i class="fa-solid fa-magnifying-glass  serch"></i>
+                <input id="input-filtro" type="search" placeholder="  Buscar producto" value="">
+            </div>
+            <div class="box-input">
+                <p>Precio max: <span class="precio-max">0</span></p>
+                <input type="range" class="range-precio" name="precio" min="0" max="80000" value="80000">
+            </div>
+            <div class="box-input">
+                <p>Categoria:</p>
+                <select name="categoria" class="select-categoria" id="categoria">
+                    <option class="option-s" value="todas">todas</option>
+                    <option class="option-s" value="zapatilla">zapatilla</option>
+                    <option class="option-s" value="ojota">ojota</option>
+                </select>
+            </div>
         </div>
 
         <!-- contenedor de los productos -->
@@ -50,9 +65,6 @@
 
     </section>
     
-    <section class="container-ajax">
-
-    </section>
     
     <!-- SECTION CARRITO - PRODUDTOS -->
     <section id="container-carrito">
