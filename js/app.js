@@ -15,14 +15,14 @@ const inputFiltrar = document.querySelector("#input-filtro")
 const filterPrecio = document.querySelector(".range-precio")
 // Filtro categoria
 const filterCategoria = document.querySelector(".select-categoria")
-
+// Precio filtro
+let spanPrecio = document.querySelector(".precio-max") 
 
 
 
 
 // -------------CONEXION FEETCH CON JSON LOCAL---------------------------
 const zapateria = []
-
 const cargarContenido  = async ()=> {
 
     try {
@@ -30,9 +30,8 @@ const cargarContenido  = async ()=> {
         const data = await response.json()
         zapateria.push(...data)
         
-        llamarFiltro(zapateria)
-        //filtroPrecio(zapateria)
-        //filtroCategoria(zapateria)
+        filtroSearch(zapateria)
+        filtrosSeleccion(zapateria)
 
     } catch (error) {
         Swal.fire ({
@@ -68,14 +67,13 @@ const contieneZapateria = (array) =>{
                  alertaCarrito() //Alerta para cada vez que se agrega un producto al carrito 
         });
     });
-    //llamarFiltro(array)
+    //filtroSearch(array)
 }
 
 // ----------------------------FILTRADO----------------------------------
 
-// Funcion para encontrar por filtro
-// Filtro por busqueda
-const llamarFiltro = (array) => {
+// Filtro por busqueda input type="search"
+const filtroSearch = (array) => {
     contieneZapateria(array)
 
     inputFiltrar.addEventListener("input", ()=> {
@@ -84,8 +82,8 @@ const llamarFiltro = (array) => {
             const valueFilter = array.filter( prod => prod.producto.includes(inputFiltrar.value))
             if (valueFilter.length > 0){ 
                 contieneZapateria(valueFilter)
-            }else if(valueFilter.length === 0){
-                 alertaNoEncontrado()   
+            }else if(valueFilter.length < 1){
+                noResultados()   
             } else{
                 console.warn("aqui hay problemas")
             }
@@ -94,40 +92,46 @@ const llamarFiltro = (array) => {
         }
     })
 }
-let spanPrecio = document.querySelector(".precio-max") 
-       //spanPrecio = filterPrecio.value
+
+// Filtro unico por categoria y precio 
+const filtrosSeleccion = (array) => {
+
+    contieneZapateria(array)
+    filtroPrecio(array)
+    // Filtro categoria
+    filterCategoria.addEventListener("click", ()=>{
+                if (filterCategoria.value === "zapatilla") {
+                    const catZapatilla = array.filter(prod => prod.categoria === filterCategoria.value);
+                    contieneZapateria(catZapatilla);
+                    filtroPrecio(catZapatilla)
+                } else if (filterCategoria.value === "ojota"){
+                    const catOjota = array.filter(prod => prod.categoria === filterCategoria.value);
+                    contieneZapateria(catOjota);
+                    filtroPrecio(catOjota)
+                } else {
+                    noResultados()
+                }
+    })
+}
+
 // Filtro por precio
 const filtroPrecio = (array) =>{
     contieneZapateria(array)
-
     filterPrecio.addEventListener("click", ()=>{
         if (filterPrecio.value > 0) {
             const precioMax = array.filter(prod => prod.precio < filterPrecio.value);
             spanPrecio.innerHTML = filterPrecio.value
             if (precioMax.length > 0){ 
                 contieneZapateria(precioMax)
-            }else{
-                 console.warn("aqui hay problemas")
+            }else if (precioMax.length < 1){
+                noResultados()
             }
         } else {
-            contieneZapateria(array)
+            noResultados()
         }
     })
 }
-// Filtro por categoria
-const filtroCategoria = (array) => {
-    filterCategoria.addEventListener("click", ()=>{
-        if (filterCategoria.value === "zapatilla") {
-            const catZapatilla = array.filter(prod => prod.categoria === filterCategoria.value);
-            contieneZapateria(catZapatilla)
-        } else if (filterCategoria.value === "ojota"){
-            const catOjota = array.filter(prod => prod.categoria === filterCategoria.value);
-            contieneZapateria(catOjota)
-        } else {
-            contieneZapateria(array)
-        }
-    })
-}
+
 
 
 

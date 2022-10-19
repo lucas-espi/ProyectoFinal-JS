@@ -29,7 +29,17 @@ const alertaNoEncontrado = () => {
       })
 }
 
-
+// Producto no encontrado html
+const noResultados = () => { 
+  contenedorZapateria.innerHTML="";
+  let ops = `<div class="no-encontrado">
+                <h1>¡Ups...!</h1>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>No hay resultados.</p>
+             </div>`
+  contenedorZapateria.innerHTML=ops
+  }
+  
 
 
 

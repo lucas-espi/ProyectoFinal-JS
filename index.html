@@ -42,14 +42,7 @@
 
         <!-- Filtro de productos -->
         <div id="box-filtro">
-            <div class="box-input">
-                <i class="fa-solid fa-magnifying-glass  serch"></i>
-                <input id="input-filtro" type="search" placeholder="  Buscar producto" value="">
-            </div>
-            <div class="box-input">
-                <p>Precio max: <span class="precio-max">0</span></p>
-                <input type="range" class="range-precio" name="precio" min="0" max="80000" value="80000">
-            </div>
+            <!-- Filtro categoria -->
             <div class="box-input">
                 <p>Categoria:</p>
                 <select name="categoria" class="select-categoria" id="categoria">
@@ -58,6 +51,16 @@
                     <option class="option-s" value="ojota">ojota</option>
                 </select>
             </div>
+            <!-- Filtro precio -->
+            <div class="box-input">
+                <p>Precio max: $<span class="precio-max">80000</span></p>
+                <input type="range" class="range-precio" name="precio" min="0" max="80000" value="80000">
+            </div>
+            <!-- Filtro por busqueda -->
+            <div class="box-input">
+                <i class="fa-solid fa-magnifying-glass  serch"></i>
+                <input id="input-filtro" type="search" placeholder="  Buscar producto" value="">
+            </div>  
         </div>
 
         <!-- contenedor de los productos -->

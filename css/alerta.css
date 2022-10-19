@@ -35,3 +35,28 @@
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+.no-encontrado{
+    border-radius: .5rem;
+    border: solid #c2723c 2px;
+    color: #1b314e;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: auto;
+    text-align: center;
+}
+.no-encontrado>h1{
+    font-size: 4rem;
+}
+
+.no-encontrado>i{
+    color: rgb(245, 226, 61);
+    font-size: 4rem;
+}
+.no-encontrado>p{
+    font-size: 3rem;
+}
