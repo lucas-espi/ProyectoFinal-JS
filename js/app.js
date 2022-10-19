@@ -93,14 +93,12 @@ const llamarFiltro = (array) => {
             contieneZapateria(array)
         }
     })
-
 }
 let spanPrecio = document.querySelector(".precio-max") 
        //spanPrecio = filterPrecio.value
 // Filtro por precio
 const filtroPrecio = (array) =>{
     contieneZapateria(array)
-    
 
     filterPrecio.addEventListener("click", ()=>{
         if (filterPrecio.value > 0) {
@@ -129,7 +127,6 @@ const filtroCategoria = (array) => {
             contieneZapateria(array)
         }
     })
-
 }
 
 
