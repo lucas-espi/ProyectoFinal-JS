@@ -178,10 +178,10 @@ const iterarCarrito = () => {
         div.setAttribute ("class", "card-carrito")
         div.innerHTML = 
             `<img class="imagen_card-carrito"  src=${prod.imagen} alt="${prod.producto}">
-            <h3 class="h3-card">${prod.producto}</h3>
-            <p class="precio-card">$${prod.precio}</p>
-            <p class="cantidad-card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
-            <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"> Eliminar <i class="fa-solid fa-trash-can"></i></button>
+            <h4 class="h4-card">${prod.producto}</h4>
+            <p class="precio-card-carro">$${prod.precio}</p>
+            <p class="cantidad-card">x<span id="cantidad">${prod.cantidad}</span> </p>
+            <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"><i class="fa-solid fa-trash-can"></i></button>
             `
             contenedorCarrito.appendChild(div)
 

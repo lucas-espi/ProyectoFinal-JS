@@ -1,36 +1,24 @@
 /* CARRITO */
 
-#container-carrito{
-    width: 100%;
-    height: auto;
-    background-color:  #ab88da;    
-    
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 7rem 0;
-}
-
-
-
 #box-carrito{
     width: 100%;
-    margin: auto;
     max-width: 1200px;
     
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
 
     border: 2px solid #4c7888;
     border-radius: .8rem;
-    padding: 4rem;
+    padding: 1.2rem;
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
-
 }
 
-
+.title-h2{
+    color: rgb(218, 225, 233);
+    font-size: 3rem;
+}
+/* estilos de las card de creadas por js */
 .card-carrito {
     display: flex;
     justify-content: space-around;
@@ -41,15 +29,45 @@
     border-radius: .5rem;
 
     max-height: 8rem;
-    box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.1);
-    color: rgb(24, 23, 23);
+    box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.3);
+    color: rgb(178, 189, 202);
     text-align: center;
     padding: .5rem 0;    
 }
+
 .imagen_card-carrito{
-    max-height: 7rem;
-    width: 9rem;
+    max-height: 5rem;
+    width: 7rem;
     border-radius: .2rem;
+    margin: 0 1rem;
+}
+
+.btn_eliminar-carrito{
+    /* boton eliminar del carrito */
+    background-color: rgb(46, 48, 51);
+    border-color:transparent;
+    border-radius: .2rem;
+    color:rgb(155, 73, 73);
+    box-shadow: 0px 4px 15px 9px rgba(0,0,0,0.1);
+    font-size: .9rem;
+    font-weight: bold;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+    margin: 0 .6rem;
+}
+
+.cantidad-card{
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+.h4-card{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.precio-card-carro{
+    color:#71cc9c ;
 }
 
 .vaciar-carrito{
@@ -60,17 +78,29 @@
     box-shadow: 0px 4px 15px 9px rgba(0,0,0,0.1);
     padding: .6rem;
     font-size: 1rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
 }
+
+.vaciar-carrito:hover{
+    color:rgb(167, 69, 69);
+}
+
 .precio-total{
     font-size: 1.5rem;
-    margin: 3rem 0 1rem 0;
+    margin: 1rem 0 .5rem 0;
     font-weight: bold;
     border: #4c7888 solid 2px;
     padding: 1rem;
     border-radius: .3rem;
+    color: rgb(195, 210, 226);
 }
 
+.box-btn-comprar{
+    border-top: #fff solid 2px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 #btn-comprar{
     background-color: #6BBE92;
@@ -82,6 +112,7 @@
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
+    margin-top: 2rem;    
 }
 
 #btn-comprar:hover{
@@ -90,6 +121,34 @@
     font-size: 1.6rem;
 }
 
+/* carro lateral */
 
+.card-lateral{
+position: absolute;
+top: 0;
+right: -100%;
+width: 38rem;
+min-height: 100vh;
+padding: 20px;
+background-color: #0f5669fa;
+box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+transition: .3s;
 
-  
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.card-lateral.active {
+    right: 0;
+}
+
+.close-cart{
+position: absolute;
+top: 1rem;
+right: .8rem;
+font-size: 2rem;
+color: white;
+cursor: pointer;  
+}

@@ -33,6 +33,7 @@
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    cursor: pointer;
 }
 
 .nav__menu>li>a{
@@ -42,4 +43,11 @@
 }
 .nav__menu>li>a:hover{
     color: #c0a0d8;
+}
+
+.list{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
 }

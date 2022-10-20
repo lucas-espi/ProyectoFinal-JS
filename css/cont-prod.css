@@ -124,23 +124,6 @@
     font-size: .9rem;
     padding: .5rem;
 }
-/* .cantidad-card{
-} */
-
-.btn_eliminar-carrito{
-/* boton eliminar del carrito */
-background-color: rgb(46, 48, 51);
-border-color:transparent;
-border-radius: .2rem;
-color:rgb(155, 73, 73);
-box-shadow: 0px 4px 15px 9px rgba(0,0,0,0.1);
-
-
-font-size: .9rem;
-font-weight: bold;
-
-padding: .5rem;
-}
 
 .title-h2{
     font-size: 2.5rem;
