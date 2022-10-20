@@ -1,0 +1,23 @@
+#container-titulo{
+    background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(/images/titulo3.jpg);
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(209, 209, 221);
+    text-align: center;
+}
+
+#container-titulo>h1{
+    font-size: 5rem;
+    padding: 2rem 0;
+}
+
+#container-titulo>p{
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+
+.italic-title{
+    font-style: italic;
+}

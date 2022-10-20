@@ -5,5 +5,5 @@ const crearID = () => parseInt( Math.random() * 100000) //Crea id para el preduc
 let carrito = []
 
 const URL = "bbdd/bbdd.json"
-//const URL = "https://camino-aventura-default-rtdb.firebaseio.com/bbdd.json"
+
 
