@@ -23,6 +23,8 @@ let spanPrecio = document.querySelector(".precio-max")
 
 // -------------CONEXION FEETCH CON JSON LOCAL---------------------------
 const zapateria = []
+
+
 const cargarContenido  = async ()=> {
 
     try {
@@ -150,6 +152,7 @@ const agregarCarrito = (prodID) => {
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
         carrito.push(cardId)
+        carritoTotal.push(cardId)
     }
     iterarCarrito()
 }
@@ -161,13 +164,6 @@ const eliminarCarrito = (prodID) => {
     carrito.splice(unidad, 1)
     iterarCarrito()
 }
-
-// Evento button vaciar carrito
-vaciarCarrito.addEventListener("click", ()=>{
-    carrito.length = 0
-    iterarCarrito()
-})
-
 
 
 // Iteración para sumar al carrio objeos seleccionados por ID

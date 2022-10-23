@@ -40,6 +40,61 @@ const noResultados = () => {
   contenedorZapateria.innerHTML=ops
   }
   
+// Alertas del carro de compras
+
+// conector con boton vaciar carrito
+const borrarCarrito = document.querySelector("#vaciar-carrito")
+ 
+borrarCarrito.addEventListener("click", ()=> {
+ 
+    Swal.fire({
+        title: "Seguro quieres borrar todo el carrito?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#E4005D',
+        cancelButtonColor: '#58D2AE',
+        confirmButtonText: 'Eliminar!',
+        background:"#454555",
+        color:'white',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            carrito.length = 0
+            iterarCarrito()  
+        }
+      })
+})
+
+
+// conector con boton comprar
+const btnComprar = document.querySelector("#btn-comprar")
+ 
+btnComprar.addEventListener("click", ()=> {
+ 
+    Swal.fire({
+        title: "Confirmar compra!",
+        color:'white',
+        showCancelButton: true,
+        confirmButtonColor: '#3993C8',
+        cancelButtonColor: '#A62D6D',
+        confirmButtonText: 'confirmar',
+        background:"#96AAE0",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          carrito.length = 0
+          iterarCarrito()  
+          Swal.fire({
+            title: "Felicitaciones por su compra!",
+            text: "Le estara llegando la factura por email",
+            color:'white',
+            background:"#96AAE0",
+            timerProgressBar:true,
+            showConfirmButton: false,
+            timer: 2000,
+          })
+        }
+      })
+})
+
 
 
 

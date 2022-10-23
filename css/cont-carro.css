@@ -132,9 +132,11 @@ min-height: 100vh;
 padding: 20px;
 background-color: #0f5669fa;
 box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-transition: .3s;
+transition: .5s;
+border-bottom-left-radius: .8rem;
+border-top-left-radius: .8rem;
 
-display: flex;
+display: none;
 flex-direction: column;
 justify-content: center;
 align-items: center;
@@ -142,6 +144,7 @@ align-items: center;
 
 .card-lateral.active {
     right: 0;
+    display: flex;
 }
 
 .close-cart{
