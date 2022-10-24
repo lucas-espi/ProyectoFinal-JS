@@ -1,10 +1,4 @@
 
-
-// CARRITO
-let carrito = []
-const URL = "bbdd/bbdd.json"
-
-
 const tarjetaPago= document.querySelector(".tarjeta")
 const vencimientoPago = document.querySelector(".vencimiento")
 const seguridadPago = document.querySelector(".seguridad")
@@ -25,8 +19,6 @@ class Pago{
 
 // Se podria hacer de manera dinamica, pero para el caso use de forma manual 
 metodoPago.push (new Pago (1234567891011123, 1243, 589))
-
-console.log(metodoPago)
 
 metodoPago.forEach(medio => {
     tarjetaPago.value = medio.tarjeta

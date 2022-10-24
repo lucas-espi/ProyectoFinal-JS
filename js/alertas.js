@@ -15,20 +15,6 @@ const alertaCarrito = () => {
       })
 }
 
-// Producto no encontrado
-
-const alertaNoEncontrado = () => {
-    Swal.fire({
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 900,
-        timerProgressBar:true,
-        background: '#D65DB1',
-        html:'<div class= "alerta_no-encontrado"><p>Producto no encontrado! </p><i class="fa-solid fa-circle-exclamation"></i></div>'
-
-      })
-}
-
 // Producto no encontrado html
 const noResultados = () => { 
   contenedorZapateria.innerHTML="";
@@ -39,9 +25,9 @@ const noResultados = () => {
              </div>`
   contenedorZapateria.innerHTML=ops
   }
+ 
   
 // Alertas del carro de compras
-
 // conector con boton vaciar carrito
 const borrarCarrito = document.querySelector("#vaciar-carrito")
  
