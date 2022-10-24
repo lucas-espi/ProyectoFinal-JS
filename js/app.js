@@ -1,7 +1,7 @@
 
-// conector con la seccion #container-zapateria del index.html - div filtro
+// conector con la seccion #box-zapateria del index.html - div filtro
 const contenedorZapateria = document.querySelector("#box-zapateria")
-// conector con la seccion #container-carrito del index.html
+// conector con la seccion #box-carrito del index.html
 const contenedorCarrito = document.querySelector("#box-carrito")
 // conector con el button #vaciar-carrito del index.html => section carrito
 const vaciarCarrito = document.querySelector("#vaciar-carrito")
@@ -15,24 +15,23 @@ const inputFiltrar = document.querySelector("#input-filtro")
 const filterPrecio = document.querySelector(".range-precio")
 // Filtro categoria
 const filterCategoria = document.querySelector(".select-categoria")
+// Precio filtro
+let spanPrecio = document.querySelector(".precio-max") 
 
 
-
-
+// ZAPATERIA
+const zapateria = []
 
 // -------------CONEXION FEETCH CON JSON LOCAL---------------------------
-const zapateria = []
 
 const cargarContenido  = async ()=> {
 
     try {
         const response = await fetch(URL)
         const data = await response.json()
-        zapateria.push(...data)
-        
-        llamarFiltro(zapateria)
-        //filtroPrecio(zapateria)
-        //filtroCategoria(zapateria)
+        zapateria.push(...data) 
+        filtroSearch(zapateria)
+        filtrosSeleccion(zapateria)
 
     } catch (error) {
         Swal.fire ({
@@ -68,14 +67,12 @@ const contieneZapateria = (array) =>{
                  alertaCarrito() //Alerta para cada vez que se agrega un producto al carrito 
         });
     });
-    //llamarFiltro(array)
 }
 
 // ----------------------------FILTRADO----------------------------------
 
-// Funcion para encontrar por filtro
-// Filtro por busqueda
-const llamarFiltro = (array) => {
+// Filtro por busqueda input type="search"
+const filtroSearch = (array) => {
     contieneZapateria(array)
 
     inputFiltrar.addEventListener("input", ()=> {
@@ -84,8 +81,8 @@ const llamarFiltro = (array) => {
             const valueFilter = array.filter( prod => prod.producto.includes(inputFiltrar.value))
             if (valueFilter.length > 0){ 
                 contieneZapateria(valueFilter)
-            }else if(valueFilter.length === 0){
-                 alertaNoEncontrado()   
+            }else if(valueFilter.length < 1){
+                noResultados()   
             } else{
                 console.warn("aqui hay problemas")
             }
@@ -94,40 +91,48 @@ const llamarFiltro = (array) => {
         }
     })
 }
-let spanPrecio = document.querySelector(".precio-max") 
-       //spanPrecio = filterPrecio.value
+
+// Filtro unico por categoria y precio 
+const filtrosSeleccion = (array) => {
+    contieneZapateria(array)
+    filtroPrecio(array)
+    // Filtro categoria + filtro precio en cadena segun categoria...
+    filterCategoria.addEventListener("click", ()=>{
+                if (filterCategoria.value === "todas") {
+                    contieneZapateria(array);
+                    filtroPrecio(array)
+                } else if (filterCategoria.value === "zapatilla") {
+                    const catZapatilla = array.filter(prod => prod.categoria === filterCategoria.value);
+                    contieneZapateria(catZapatilla);
+                    filtroPrecio(catZapatilla)
+                } else if (filterCategoria.value === "ojota"){
+                    const catOjota = array.filter(prod => prod.categoria === filterCategoria.value);
+                    contieneZapateria(catOjota);
+                    filtroPrecio(catOjota)
+                } else {
+                    noResultados()
+                }
+    })
+}
+
 // Filtro por precio
 const filtroPrecio = (array) =>{
     contieneZapateria(array)
-
     filterPrecio.addEventListener("click", ()=>{
         if (filterPrecio.value > 0) {
             const precioMax = array.filter(prod => prod.precio < filterPrecio.value);
             spanPrecio.innerHTML = filterPrecio.value
             if (precioMax.length > 0){ 
                 contieneZapateria(precioMax)
-            }else{
-                 console.warn("aqui hay problemas")
+            }else if (precioMax.length < 1){
+                noResultados()
             }
         } else {
-            contieneZapateria(array)
+            noResultados()
         }
     })
 }
-// Filtro por categoria
-const filtroCategoria = (array) => {
-    filterCategoria.addEventListener("click", ()=>{
-        if (filterCategoria.value === "zapatilla") {
-            const catZapatilla = array.filter(prod => prod.categoria === filterCategoria.value);
-            contieneZapateria(catZapatilla)
-        } else if (filterCategoria.value === "ojota"){
-            const catOjota = array.filter(prod => prod.categoria === filterCategoria.value);
-            contieneZapateria(catOjota)
-        } else {
-            contieneZapateria(array)
-        }
-    })
-}
+
 
 
 
@@ -138,11 +143,9 @@ const filtroCategoria = (array) => {
 const agregarCarrito = (prodID) => {
     // contador productos en carrito
     const repite = carrito.some (prod => prod.id === prodID)
-
     if (repite) {
-        let prod = carrito.map (prod => { //ver si con esta variable puedo atrapar la cantidad de todo el carro
-
-            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Revisa el error en función ahregarCarrito()")
+        let prod = carrito.map (prod => { 
+            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Revisa el error en función agregarCarrito()")
         })
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
@@ -159,27 +162,19 @@ const eliminarCarrito = (prodID) => {
     iterarCarrito()
 }
 
-// Evento button vaciar carrito
-vaciarCarrito.addEventListener("click", ()=>{
-    carrito.length = 0
-    iterarCarrito()
-})
-
-
 
 // Iteración para sumar al carrio objeos seleccionados por ID
 const iterarCarrito = () => {
-    contenedorCarrito.innerHTML="" // para borrar el nodo y que no se acumulen
-
+    contenedorCarrito.innerHTML="" 
     carrito.forEach((prod)=> {
         let div = document.createElement("div")
         div.setAttribute ("class", "card-carrito")
         div.innerHTML = 
             `<img class="imagen_card-carrito"  src=${prod.imagen} alt="${prod.producto}">
-            <h3 class="h3-card">${prod.producto}</h3>
-            <p class="precio-card">$${prod.precio}</p>
-            <p class="cantidad-card">Canidad:<span id="cantidad">${prod.cantidad}</span> </p>
-            <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"> Eliminar <i class="fa-solid fa-trash-can"></i></button>
+            <h4 class="h4-card">${prod.producto}</h4>
+            <p class="precio-card-carro">$${prod.precio}</p>
+            <p class="cantidad-card">x<span id="cantidad">${prod.cantidad}</span> </p>
+            <button id="btn-eliminar${prod.id}" class="btn_eliminar-carrito"><i class="fa-solid fa-trash-can"></i></button>
             `
             contenedorCarrito.appendChild(div)
 
@@ -193,7 +188,8 @@ const iterarCarrito = () => {
 
     // Revisar la forma de tomar todos los productos (repetidos)
     contadorCarrito.innerHTML = carrito.length
-    precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio, 0)
+    precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio * prod.cantidad, 0)
+
 }
 
 
