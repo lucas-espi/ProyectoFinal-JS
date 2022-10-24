@@ -6,7 +6,7 @@
     "categoria":"zapatilla",
     "precio":38849,
     "cantidad":1,
-    "imagen":"./img-bbdd/zapatillas-forum-low.jpg"
+    "imagen":"/bbdd/img-bbdd/zapatillas-forum-low.jpg"
     },
     
     {
