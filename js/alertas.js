@@ -64,41 +64,36 @@ borrarCarrito.addEventListener("click", ()=> {
       })
 })
 
+// conector con boton finalizar Compra
+const finalizarCompra = document.querySelector(".finalizar")
 
-// conector con boton comprar
-const btnComprar = document.querySelector("#btn-comprar")
+finalizarCompra.addEventListener("click", ()=> {
  
-btnComprar.addEventListener("click", ()=> {
- 
-    Swal.fire({
-        title: "Confirmar compra!",
-        color:'white',
-        showCancelButton: true,
-        confirmButtonColor: '#3993C8',
-        cancelButtonColor: '#A62D6D',
-        confirmButtonText: 'confirmar',
-        background:"#96AAE0",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          carrito.length = 0
-          iterarCarrito()  
-          Swal.fire({
-            title: "Felicitaciones por su compra!",
-            text: "Le estara llegando la factura por email",
-            color:'white',
-            background:"#96AAE0",
-            timerProgressBar:true,
-            showConfirmButton: false,
-            timer: 2000,
-          })
-        }
-      })
+  Swal.fire({
+      title: "Confirmar compra!",
+      color:'white',
+      showCancelButton: true,
+      confirmButtonColor: '#3993C8',
+      cancelButtonColor: '#A62D6D',
+      confirmButtonText: 'confirmar',
+      background:"#96AAE0",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        carrito.length = 0
+        iterarCarrito()
+        boxComprar.classList.remove("action")  
+        Swal.fire({
+          title: "Felicitaciones por su compra!",
+          text: "Le estara llegando la factura por email",
+          color:'white',
+          background:"#96AAE0",
+          timerProgressBar:true,
+          showConfirmButton: false,
+          timer: 2000,
+        })
+      }
+    })
 })
-
-
-
-
-
 
 
 

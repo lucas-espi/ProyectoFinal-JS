@@ -155,3 +155,71 @@ font-size: 2rem;
 color: white;
 cursor: pointer;  
 }
+
+/* Box de compra */
+.box-compra{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    background-color: #0f5669fa;
+}
+
+.box-compra.action{
+    display: flex;
+}
+
+.box-compra>p{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    margin: 2rem 0;
+}
+
+.form-compra{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin: 0 1rem;
+    border-top: #63ac859a 2px solid;
+    border-bottom: #63ac859a 2px solid;
+}
+
+.form-compra>input {
+    border-bottom-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    border: transparent solid 1xp;
+    height: 2rem;
+    background-color: #a4cad6;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.form-compra>label{
+    font-family: cursive;
+}
+
+.finalizar {
+    background-color: #6BBE92;
+    border: solid transparent 1px;
+    border-radius: .3rem;
+    padding: 1rem .2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 18rem;
+    margin: 2rem auto;
+}
+.finalizar:hover{
+    transition: .5s;
+    font-size: 1.6rem;
+    box-shadow: inset -3px 4px 43px -4px rgba(0,0,0,0.2);
+}

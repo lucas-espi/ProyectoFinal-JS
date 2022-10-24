@@ -23,7 +23,6 @@
     color: yellowgreen;
 }
 
-
 .footer__menu>li{
     list-style:none;
 
@@ -38,7 +37,6 @@
     color: rgb(165, 187, 206);
 }
 
-.footer-content:last-child{
-    font-size: 2rem;
-    font-weight: bold;
+.footer-content:last-child>img{
+    height: 4.5rem;
 }

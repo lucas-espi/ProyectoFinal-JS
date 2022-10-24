@@ -152,7 +152,6 @@ const agregarCarrito = (prodID) => {
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
         carrito.push(cardId)
-        carritoTotal.push(cardId)
     }
     iterarCarrito()
 }

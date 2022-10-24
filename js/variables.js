@@ -4,7 +4,7 @@ const crearID = () => parseInt( Math.random() * 100000) //Crea id para el preduc
 // CARRITO
 let carrito = []
 
-const carritoTotal = []
+
 
 const URL = "bbdd/bbdd.json"
 
