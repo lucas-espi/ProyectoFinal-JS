@@ -1,4 +1,3 @@
-
 // conector con la seccion #box-zapateria del index.html - div filtro
 const contenedorZapateria = document.querySelector("#box-zapateria")
 // conector con la seccion #box-carrito del index.html
@@ -21,7 +20,8 @@ let spanPrecio = document.querySelector(".precio-max")
 
 // ZAPATERIA
 const zapateria = []
-
+let carrito = []
+const URL = "bbdd/bbdd.json"
 // -------------CONEXION FEETCH CON JSON LOCAL---------------------------
 
 const cargarContenido  = async ()=> {
@@ -60,7 +60,7 @@ const contieneZapateria = (array) =>{
                     `
                 contenedorZapateria.appendChild(div)
 
-        // Evento al boton - seleccionar por id
+        // Evento al boton - seleccionar por id y agregar al carrito
         const botonCard = document.getElementById(`btn${prod.id}`)
         botonCard.addEventListener("click", ()=> {
                  agregarCarrito(prod.id);
@@ -84,7 +84,7 @@ const filtroSearch = (array) => {
             }else if(valueFilter.length < 1){
                 noResultados()   
             } else{
-                console.warn("aqui hay problemas")
+                console.warn("Error")
             }
         } else {
             contieneZapateria(array)
@@ -92,7 +92,7 @@ const filtroSearch = (array) => {
     })
 }
 
-// Filtro unico por categoria y precio 
+// Filtro unificado por categoria y precio 
 const filtrosSeleccion = (array) => {
     contieneZapateria(array)
     filtroPrecio(array)
@@ -133,19 +133,14 @@ const filtroPrecio = (array) =>{
     })
 }
 
-
-
-
-
 // -----------------------------CARRITO -----------------------------
-
 // Funcion para agregar al carrito
 const agregarCarrito = (prodID) => {
     // contador productos en carrito
     const repite = carrito.some (prod => prod.id === prodID)
     if (repite) {
         let prod = carrito.map (prod => { 
-            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Revisa el error en función agregarCarrito()")
+            (prod.id === prodID) ? prod.cantidad ++ : console.warn("Error en función agregarCarrito()")
         })
     } else {    
         let cardId = zapateria.find(prod => prod.id === prodID)
@@ -161,7 +156,6 @@ const eliminarCarrito = (prodID) => {
     carrito.splice(unidad, 1)
     iterarCarrito()
 }
-
 
 // Iteración para sumar al carrio objeos seleccionados por ID
 const iterarCarrito = () => {

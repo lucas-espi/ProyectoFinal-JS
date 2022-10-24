@@ -1,3 +1,5 @@
+// Para abrir y cerrar el carrito.
+
 const iconCarrito = document.querySelector("#icon-carrito")
 const lateralCarrito = document.querySelector(".card-lateral")
 const closeCarrito = document.querySelector(".close-cart")
@@ -8,7 +10,6 @@ const closeCompra = document.querySelector(".close-compra")
 iconCarrito.addEventListener("click", () => {
     lateralCarrito.classList.add("active")
 })
-
 
 closeCarrito.addEventListener("click", () => {
     lateralCarrito.classList.remove("active")
