@@ -84,7 +84,7 @@ finalizarCompra.addEventListener("click", ()=> {
         boxComprar.classList.remove("action")  
         Swal.fire({
           title: "Felicitaciones por su compra!",
-          text: "Le estara llegando la factura por email",
+          text: "Se enviara la factura al email ingresado",
           color:'white',
           background:"#96AAE0",
           timerProgressBar:true,

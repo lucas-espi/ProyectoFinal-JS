@@ -19,19 +19,17 @@ const filterCategoria = document.querySelector(".select-categoria")
 let spanPrecio = document.querySelector(".precio-max") 
 
 
-
-
-// -------------CONEXION FEETCH CON JSON LOCAL---------------------------
+// ZAPATERIA
 const zapateria = []
 
+// -------------CONEXION FEETCH CON JSON LOCAL---------------------------
 
 const cargarContenido  = async ()=> {
 
     try {
         const response = await fetch(URL)
         const data = await response.json()
-        zapateria.push(...data)
-        
+        zapateria.push(...data) 
         filtroSearch(zapateria)
         filtrosSeleccion(zapateria)
 
@@ -190,7 +188,8 @@ const iterarCarrito = () => {
 
     // Revisar la forma de tomar todos los productos (repetidos)
     contadorCarrito.innerHTML = carrito.length
-    precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio, 0)
+    precioCarrito.innerHTML= carrito.reduce((acc, prod)=> acc + prod.precio * prod.cantidad, 0)
+
 }
 
 
